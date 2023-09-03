@@ -3,8 +3,8 @@ def catch_errors(func):
         try:
             result = func(*args, **kwargs)
             return result
-        except KeyError as e:
-            print('An error has occured: ', e)
+        except Exception as e:
+            print(f'A {type(e).__name__} has occurred: {e}')
     return wrapper
 
 
