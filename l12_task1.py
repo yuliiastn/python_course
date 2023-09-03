@@ -2,7 +2,8 @@ def isadmin(func):
     def wrapper(user_type, **kwargs):
         if user_type == 'admin':
             return func(user_type, **kwargs)
-        return 'Permission denied'
+        else:
+            raise PermissionError("Permission denied")
     return wrapper
 
 
